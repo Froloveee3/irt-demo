@@ -1,0 +1,23 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@chenfengyuan/vue-carousel": "^2.0.0",
+    "nuxt": "^3.15.0",
+    "swiper": "^11.1.15",
+    "vue": "latest",
+    "vue-router": "latest",
+    "vue-slider-component": "^4.1.0-beta.7"
+  },
+  "devDependencies": {
+    "sass": "^1.83.0"
+  }
+}

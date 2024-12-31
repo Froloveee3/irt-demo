@@ -1,0 +1,255 @@
+@font-face {
+  font-family: "Ablation";
+  src: url("/fonts/Ablation-Hairline.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ablation";
+  src: url("/fonts/Ablation-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ablation";
+  src: url("/fonts/Ablation-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ablation";
+  src: url("/fonts/Ablation-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ablation";
+  src: url("/fonts/Ablation-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ablation";
+  src: url("/fonts/Ablation-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter_18pt-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+:root {
+  --color-bg: #3e456c;
+  --color-gradient: #86a2ff;
+  --color-gradient-start: #86a2ff00;
+  --color-gradient-end: #86a2ff6c;
+  --color-table-bg: #86a2ff33;
+  --color-loading-bg: #cbd7ff;
+
+  --font-h1: 2.5rem;
+  --font-h2: 1rem;
+  --font-text1: 1.5rem;
+  --font-text2: 1rem;
+  --font-header: 0.75rem;
+  --font-header-family: "Inter";
+  --font-header-weight: 300;
+  --loading-logo-size: 15.375rem;
+
+  --font-h1-tablet: 2rem;
+  --font-h2-tablet: 0.875rem;
+  --font-text1-tablet: 1rem;
+  --font-text2-tablet: 0.875rem;
+  --font-header-tablet: 0.75rem;
+  --font-header-family-tablet: "Inter";
+  --font-header-weight-tablet: 300;
+  --loading-logo-size-tablet: 15.375rem;
+
+  --font-h1-mobile: 1.25rem;
+  --font-h2-mobile: 0.875rem;
+  --font-text1-mobile: 0.875rem;
+  --font-text2-mobile: 0.75rem;
+  --font-header-mobile: 0.75rem;
+  --font-header-family-mobile: "Ablation";
+  --font-header-weight-mobile: 900; 
+  --loading-logo-size-mobile: 7.6875;
+}
+
+h1 {
+  font-family: "Ablation", sans-serif;
+  font-size: var(--font-h1);
+  font-weight: 900;
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  font-family: "Ablation", sans-serif;
+  font-size: var(--font-h2);
+  font-weight: 900;
+  padding: 0;
+  margin: 0;
+}
+
+.text-1 {
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-text1);
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+}
+
+.text-2 {
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-text2);
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+}
+
+.header-text {
+  font-family: var(--font-header-family), sans-serif;
+  font-size: var(--font-header);
+  font-weight: var(--font-header-weight);
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --font-h1: var(--font-h1-tablet);
+    --font-h2: var(--font-h2-tablet);
+    --font-text1: var(--font-text1-tablet);
+    --font-text2: var(--font-text2-tablet);
+    --font-header: var(--font-header-tablet);
+    --font-header-family: var(--font-header-family-tablet);
+    --font-header-weight: var(--font-header-weight-tablet);
+    --loading-logo-size: var(--loading-logo-size-tablet);
+  }
+}
+
+@media (max-width: 740px) {
+  :root {
+    --font-h1: var(--font-h1-mobile);
+    --font-h2: var(--font-h2-mobile);
+    --font-text1: var(--font-text1-mobile);
+    --font-text2: var(--font-text2-mobile);
+    --font-header: var(--font-header-mobile);
+    --font-header-family: var(--font-header-family-mobile);
+    --font-header-weight: var(--font-header-weight-mobile);
+    --loading-logo-size: var(--loading-logo-size-mobile);
+  }
+}
