@@ -1,7 +1,61 @@
 <template>
   <div class="header">
     <div class="logo">
-      <img src="/images/main-logo.png" alt="Main Logo" class="logo">
+      <!-- Логотип меняется в зависимости от текущей локали -->
+      <img :src="logoSrc" alt="Main Logo" class="logo">
+    </div>
+    <div class="navigation">
+      <button @click="scrollTo('advantages')"><p class="header-text">{{$t("Преимущества")}}</p></button>
+      <button @click="scrollTo('possibilities')"><p class="header-text">{{$t("Возможности")}}</p></button>
+      <button @click="scrollTo('robots')"><p class="header-text">{{$t("Промышленные роботы")}}</p></button>
+      <button @click="scrollTo('production')"><p class="header-text">{{$t("Производство")}}</p></button>
+      <button @click="scrollTo('contacts')"><p class="header-text">{{$t("Контакты")}}</p></button>
+    </div>
+    <template v-if="isMobileScreen">
+      <div style="display: flex; flex-direction: row; align-items: center; gap: 0.5rem;">
+        <div class="language-switch">
+          <button @click="toggleLanguage">
+            <img src="/images/change-locale.png" alt="Language" />
+          </button>
+        </div>
+        <div class="menu-icon" :class="{ active: isMenuOpen }" @click="toggleMenu">
+          <div class="line" :class="{ active: isMenuOpen }"></div>
+          <div class="line" :class="{ active: isMenuOpen }"></div>
+          <div class="line" :class="{ active: isMenuOpen }"></div>
+        </div>
+        <div class="menu-navigation" :class="{ active: isMenuOpen }">
+          <button @click="scrollTo('advantages')"><p class="header-text">{{$t("Преимущества")}}</p></button>
+          <button @click="scrollTo('possibilities')"><p class="header-text">{{$t("Возможности")}}</p></button>
+          <button @click="scrollTo('robots')"><p class="header-text">{{$t("Промышленные роботы")}}</p></button>
+          <button @click="scrollTo('production')"><p class="header-text">{{$t("Производство")}}</p></button>
+          <button @click="scrollTo('contacts')"><p class="header-text">{{$t("Контакты")}}</p></button>
+        </div>
+      </div>
+    </template>
+    <template v-else>
+      <div class="language-switch">
+        <button @click="toggleLanguage">
+          <img src="/images/change-locale.png" alt="Language" />
+        </button>
+      </div>
+      <div class="menu-icon" :class="{ active: isMenuOpen }" @click="toggleMenu">
+        <div class="line" :class="{ active: isMenuOpen }"></div>
+        <div class="line" :class="{ active: isMenuOpen }"></div>
+        <div class="line" :class="{ active: isMenuOpen }"></div>
+      </div>
+      <div class="menu-navigation" :class="{ active: isMenuOpen }">
+        <button @click="scrollTo('advantages')"><p class="header-text">{{$t("Преимущества")}}</p></button>
+        <button @click="scrollTo('possibilities')"><p class="header-text">{{$t("Возможности")}}</p></button>
+        <button @click="scrollTo('robots')"><p class="header-text">{{$t("Промышленные роботы")}}</p></button>
+        <button @click="scrollTo('production')"><p class="header-text">{{$t("Производство")}}</p></button>
+        <button @click="scrollTo('contacts')"><p class="header-text">{{$t("Контакты")}}</p></button>
+      </div>
+    </template>
+
+    <!-- <div class="language-switch">
+      <button @click="toggleLanguage">
+        <img src="/images/change-locale.png" alt="Language" />
+      </button>
     </div>
     <div class="menu-icon" :class="{ active: isMenuOpen }" @click="toggleMenu">
       <div class="line" :class="{ active: isMenuOpen }"></div>
@@ -9,30 +63,48 @@
       <div class="line" :class="{ active: isMenuOpen }"></div>
     </div>
     <div class="menu-navigation" :class="{ active: isMenuOpen }">
-      <button @click="scrollTo('advantages')"><p class="header-text">Преимущества</p></button>
-      <button @click="scrollTo('possibilities')"><p class="header-text">Возможности</p></button>
-      <button @click="scrollTo('robots')"><p class="header-text">Промышленные роботы</p></button>
-      <button @click="scrollTo('production')"><p class="header-text">Производство</p></button>
-      <button @click="scrollTo('contacts')"><p class="header-text">Контакты</p></button>
-    </div>
-    <div class="navigation">
-      <button @click="scrollTo('advantages')"><p class="header-text">Преимущества</p></button>
-      <button @click="scrollTo('possibilities')"><p class="header-text">Возможности</p></button>
-      <button @click="scrollTo('robots')"><p class="header-text">Промышленные роботы</p></button>
-      <button @click="scrollTo('production')"><p class="header-text">Производство</p></button>
-      <button @click="scrollTo('contacts')"><p class="header-text">Контакты</p></button>
-    </div>
+      <button @click="scrollTo('advantages')"><p class="header-text">{{$t("Преимущества")}}</p></button>
+      <button @click="scrollTo('possibilities')"><p class="header-text">{{$t("Возможности")}}</p></button>
+      <button @click="scrollTo('robots')"><p class="header-text">{{$t("Промышленные роботы")}}</p></button>
+      <button @click="scrollTo('production')"><p class="header-text">{{$t("Производство")}}</p></button>
+      <button @click="scrollTo('contacts')"><p class="header-text">{{$t("Контакты")}}</p></button>
+    </div> -->
   </div>
 </template>
 
-  
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 
+const windowWidth = ref(window.innerWidth);
+
+const updateWindowWidth = () => {
+  windowWidth.value = window.innerWidth;
+};
+
+onMounted(() => {
+  window.addEventListener("resize", updateWindowWidth);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", updateWindowWidth);
+});
+
+const isMobileScreen = computed(() => windowWidth.value < 836);
+
+const { locale } = useI18n();
 const isMenuOpen = ref(false);
+
+const logoSrc = computed(() => {
+  return locale.value === 'en' ? '/images/main-logo-en.png' : '/images/main-logo.png';
+});
 
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value;
+}
+
+function toggleLanguage() {
+  locale.value = locale.value === 'en' ? 'ru' : 'en';
 }
 
 function scrollTo(id: string) {
@@ -43,6 +115,7 @@ function scrollTo(id: string) {
   }
 }
 </script>
+
 
 
 <style scoped>
@@ -159,7 +232,7 @@ function scrollTo(id: string) {
   margin: 0.5rem 0;
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 836px) {
   .menu-icon {
     display: flex;
   }
@@ -167,5 +240,22 @@ function scrollTo(id: string) {
   .navigation {
     display: none;
   }
+}
+
+.language-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-switch button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.language-switch img {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 </style>

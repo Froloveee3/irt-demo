@@ -2,7 +2,7 @@
   <div class="introducing" id="introducing">
     <div style="display: flex; flex-direction: column; align-items: center;" v-if="isMobileScreen">
       <div class="title">
-          <h1>ИРТ <span class="description">— роботизированные технологии для автоматизации вашего производства</span></h1>
+          <h1>{{$t("ИРТ")}}<span class="description">{{$t(" — роботизированные технологии для автоматизации вашего производства")}}</span></h1>
       </div>
       <div class="video">
         <video autoplay loop muted width="100%" height="100%">
@@ -10,16 +10,16 @@
         </video>
       </div>
       <div class="subtitle">
-        <p class="text-1">Раздвигаем границы возможного!</p>
+        <p class="text-1">{{$t("Раздвигаем границы возможного!")}}</p>
       </div>
     </div>
     <template v-else>
       <div class="text">
         <div class="title">
-          <h1>ИРТ <span class="description">— роботизированные технологии для автоматизации вашего производства</span></h1>
+          <h1>{{$t("ИРТ")}}<span class="description">{{$t(" — роботизированные технологии для автоматизации вашего производства")}}</span></h1>
         </div>
         <div class="subtitle">
-          <p class="text-1">Раздвигаем границы возможного!</p>
+          <p class="text-1">{{$t("Раздвигаем границы возможного!")}}</p>
         </div>
       </div>
       <div class="video">
@@ -48,7 +48,7 @@ onUnmounted(() => {
   window.removeEventListener("resize", updateWindowWidth);
 });
 
-const isMobileScreen = computed(() => windowWidth.value < 740);
+const isMobileScreen = computed(() => windowWidth.value < 836);
 
 </script>
 
@@ -122,7 +122,7 @@ const isMobileScreen = computed(() => windowWidth.value < 740);
   }
 }
 
-@media (max-width: 740px) {
+@media (max-width: 836px) {
   .introducing {
     flex-direction: column;
     margin-top: 4rem;

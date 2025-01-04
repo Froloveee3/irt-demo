@@ -5,12 +5,12 @@
       <div class="description">
         <p class="text-2">{{ text1 }}</p>
         <div class="gap"></div>
-        <h2>Область применения:</h2>
+        <h2>{{$t("Область применения:")}}</h2>
         <p class="text-2">{{ text2 }}</p>
         <div class="gap"></div>
       </div>
     </div>
-    <h2>Основные технические характеристики</h2>
+    <h2>{{$t("Основные технические характеристики")}}</h2>
     <Table :headers="headers" :rows="rows"></Table>
   </div>
   <div v-else style="display: flex; flex-direction: column;">
@@ -19,10 +19,10 @@
       <div class="description">
         <p class="text-2">{{ text1 }}</p>
         <div class="gap"></div>
-        <h2>Область применения:</h2>
+        <h2>{{$t("Область применения:")}}</h2>
         <p class="text-2">{{ text2 }}</p>
         <div class="gap"></div>
-        <h2>Основные технические характеристики</h2>
+        <h2>{{$t("Основные технические характеристики")}}</h2>
         <Table :headers="headers" :rows="rows"></Table>
       </div>
     </div>
@@ -30,10 +30,10 @@
       <div class="description">
         <p class="text-2">{{ text1 }}</p>
         <div class="gap"></div>
-        <h2>Область применения:</h2>
+        <h2>{{$t("Область применения:")}}</h2>
         <p class="text-2">{{ text2 }}</p>
         <div class="gap"></div>
-        <h2>Основные технические характеристики</h2>
+        <h2>{{$t("Основные технические характеристики")}}</h2>
         <Table :headers="headers" :rows="rows"></Table>
       </div>
       <Box :title="name" :image="imagePath" titleHeight="1.25rem" titleMaxWidth="15rem" minWidth="22.5rem"/>
@@ -110,7 +110,7 @@ defineProps({
   height: 1.5rem;
 }
 
-@media (max-width: 740px) {
+@media (max-width: 836px) {
   .robot {
     flex-direction: column;
   }

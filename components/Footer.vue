@@ -1,28 +1,31 @@
 <template>
   <div class="footer">
     <div class="logo">
-      <img src="/images/footer-logo.png" alt="Footer Logo" class="logo">
+      <!-- Логотип меняется в зависимости от текущей локали -->
+      <img :src="footerLogoSrc" alt="Footer Logo" class="logo">
     </div>
     <h2 v-if="!isMobileScreen">logistica@povpro.ru</h2>
     <div v-if="!isNarrowScreen" class="navigation">
-      <button @click="scrollTo('advantages')"><p class="header-text">Преимущества</p></button>
-      <button @click="scrollTo('possibilities')"><p class="header-text">Возможности</p></button>
-      <button @click="scrollTo('robots')"><p class="header-text">Промышленные роботы</p></button>
-      <button @click="scrollTo('production')"><p class="header-text">Производство</p></button>
-      <button @click="scrollTo('contacts')"><p class="header-text">Контакты</p></button>
+      <button @click="scrollTo('advantages')"><p class="header-text">{{$t("Преимущества")}}</p></button>
+      <button @click="scrollTo('possibilities')"><p class="header-text">{{$t("Возможности")}}</p></button>
+      <button @click="scrollTo('robots')"><p class="header-text">{{$t("Промышленные роботы")}}</p></button>
+      <button @click="scrollTo('production')"><p class="header-text">{{$t("Производство")}}</p></button>
+      <button @click="scrollTo('contacts')"><p class="header-text">{{$t("Контакты")}}</p></button>
     </div>
   </div>
 </template>
-  
-<script lang="ts" setup>
-function scrollTo(id: string) {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-  }
-}
 
-import { ref, onMounted, onUnmounted } from "vue";
+<script lang="ts" setup>
+import { ref, computed, onMounted, onUnmounted } from "vue";
+import { useI18n } from "vue-i18n";
+
+// Получаем локаль
+const { locale } = useI18n();
+
+// Определяем логотип для футера в зависимости от локали
+const footerLogoSrc = computed(() => {
+  return locale.value === "en" ? "/images/footer-logo-en.png" : "/images/footer-logo.png";
+});
 
 const windowWidth = ref(window.innerWidth);
 
@@ -39,7 +42,14 @@ onUnmounted(() => {
 });
 
 const isNarrowScreen = computed(() => windowWidth.value < 1100);
-const isMobileScreen = computed(() => windowWidth.value < 740);
+const isMobileScreen = computed(() => windowWidth.value < 836);
+
+function scrollTo(id: string) {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+}
 </script>
 
 <style scoped>
@@ -61,7 +71,7 @@ const isMobileScreen = computed(() => windowWidth.value < 740);
   justify-content: center;
   align-items: center;
   width: 3.125rem;
-  height: 4..375rem;
+  height: 4.375rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -88,7 +98,7 @@ h2 {
   height: 1rem;
 }
 
-@media (max-width: 740px) {
+@media (max-width: 836px) {
   .footer {
     padding: 1rem;
   }

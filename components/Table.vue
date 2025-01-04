@@ -96,7 +96,7 @@ defineProps({
   }
 }
 
-@media (max-width: 740px) {
+@media (max-width: 836px) {
   .custom-table th, .custom-table td {
     font-size: 0.35rem;
     padding: 0.45rem;

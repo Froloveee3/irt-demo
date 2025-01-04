@@ -41,4 +41,11 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 836px) {
+  .loading-logo {
+    width: 10rem;
+    height: 10rem;
+  }
+}
 </style>

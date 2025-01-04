@@ -1,6 +1,6 @@
 <template>
   <div class="possibilities" id="possibilities">
-    <h1>Наши возможности</h1>
+    <h1>{{$t("Наши возможности")}}</h1>
     <div class="grid">
       <Box v-for="(item, index) in items" :key="index" :title="item.title" :text="item.description" :title-height="item.titleHeight" :class="`grid-item item-${index + 1}`"/>
     </div>
@@ -9,17 +9,20 @@
 
 <script lang="ts" setup>
 import Box from './Box.vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 const items = [
-  { title: "Промышленные роботы манипуляторы", description: "Программирование и пуско-наладка", titleHeight: "3.75rem" },
-  { title: "Интеллектуальные разработки", description: "Мы сможем не только поставить необходимых роботов, но и спроектировать все узлы и компоненты для интеграции в ваш рабочий процесс", titleHeight: "3.75rem" },
-  { title: "Собственное производство", description: "Изготовление необходимой оснастки и инструментов на собственном производстве", titleHeight: "3.75rem" },
-  { title: "Написание управляющих программ для оборудования" },
-  { title: "Написание постпроцессоров" },
-  { title: "Программирование контроллеров" },
-  { title: "Автоматизация технологических процессов" },
-  { title: "3D-моделирование и разработка чертежей" },
-  { title: "Модернизация оборудования" },
+  { title: t("Промышленные роботы манипуляторы"), description: t("Программирование и пуско-наладка"), titleHeight: "3.75rem" },
+  { title: t("Интеллектуальные разработки"), description: t("Мы сможем не только поставить необходимых роботов, но и спроектировать все узлы и компоненты для интеграции в ваш рабочий процесс"), titleHeight: "3.75rem" },
+  { title: t("Собственное производство"), description: t("Изготовление необходимой оснастки и инструментов на собственном производстве"), titleHeight: "3.75rem" },
+  { title: t("Написание управляющих программ для оборудования"), description: "", titleHeight: "3.75rem" },
+  { title: t("Написание постпроцессоров"), description: "", titleHeight: "3.75rem" },
+  { title: t("Программирование контроллеров"), description: "", titleHeight: "3.75rem" },
+  { title: t("Автоматизация технологических процессов"), description: "", titleHeight: "3.75rem" },
+  { title: t("3D-моделирование и разработка чертежей"), description: "", titleHeight: "3.75rem" },
+  { title: t("Модернизация оборудования"), description: "", titleHeight: "3.75rem" },
 ];
 </script>
 
@@ -65,7 +68,7 @@ h1 {
   }
 }
 
-@media (max-width: 740px) {
+@media (max-width: 836px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
