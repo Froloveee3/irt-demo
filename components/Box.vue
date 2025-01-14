@@ -1,11 +1,16 @@
 <template>
-  <div class="box" :style="{ minWidth: minWidth || '8rem' }">
+  <div
+    class="box"
+    :style="{ minWidth: minWidth || '8rem', maxWidth: maxWidth || 'auto' }"
+    @click="scrollTo(scrollToId)"
+  >
     <h2 :style="{ minHeight: titleHeight || '2.5rem', maxWidth: titleMaxWidth || '100%' }">{{ title }}</h2>
     <p v-if="text" class="text-2">{{ text }}</p>
     <img v-if="image" :src="image" alt="Box Image" />
     <slot></slot>
   </div>
 </template>
+
 
 <script lang="ts" setup>
 defineProps({
@@ -15,7 +20,21 @@ defineProps({
   titleHeight: String,
   titleMaxWidth: String,
   minWidth: String,
+  maxWidth: String,
+  scrollToId: {
+    type: String,
+    default: undefined,
+  },
 });
+
+function scrollTo(id: string | undefined) {
+  if (!id) return;
+
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+}
 </script>
 
 <style scoped>
@@ -60,5 +79,35 @@ defineProps({
 
 .box img {
   max-height: 22rem;
+}
+
+@media (min-width: 1500px) {
+  .box img {
+    max-height: 32.5rem;
+  }
+}
+
+@media (max-width: 836px) {
+  .box {
+    padding: 1rem 0.5rem;
+    border-radius: 0.875rem;
+  }
+
+  .box::before {
+    border-radius: 0.875rem;
+  }
+  
+  .box h2, .box p {
+    scale: 0.9;
+  }
+
+  .box p {
+    font-size: 0.65rem;  
+  }
+
+  .box img {
+    max-height: 17rem;
+  }
+
 }
 </style>

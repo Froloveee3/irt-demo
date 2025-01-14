@@ -59,7 +59,6 @@ const isMobileScreen = computed(() => windowWidth.value < 836);
   align-items: center;
   width: 100%;
   padding: 3rem 1rem;
-  margin-top: 9.5rem;
   background: linear-gradient(180deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
   border-bottom-left-radius: 1.875rem;
   border-bottom-right-radius: 1.875rem;
@@ -71,7 +70,7 @@ const isMobileScreen = computed(() => windowWidth.value < 836);
 
 .title {
   flex-shrink: 0;
-  max-width : 37.5rem;
+  max-width : 46.25rem;
 }
 
 .title h1 {
@@ -95,19 +94,45 @@ const isMobileScreen = computed(() => windowWidth.value < 836);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 25rem;
-  min-width: 25rem;
-  height: 25rem;
-  width: 25rem;
+  min-height: 40rem;
+  min-width: 40rem;
+  height: 40rem;
+  width: 40rem;
+  margin-left: -10%;
+  margin-right: -10%;
 }
 
-@media (max-width: 1100px) {
+@media (min-width: 1500px) {
   .introducing {
-    margin-top: 4rem;
+    margin-top: 0;
   }
 
+  .title {
+    max-width: 73.75rem;
+  }
+
+  .title h1 {
+    font-size: 4.5rem;
+  }
+
+  .video {
+    min-height: 50rem;
+    min-width: 50rem;
+    height: 50rem;
+    width: 50rem;
+    margin-left: -10%;
+    margin-right: -10%;
+  }
+
+  .subtitle p {
+    font-size: 2.5rem;
+  }
+}
+
+
+@media (max-width: 1100px) {
   .subtitle {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   
   .subtitle p {
@@ -115,10 +140,11 @@ const isMobileScreen = computed(() => windowWidth.value < 836);
   }
 
   .video {
-    min-height: 16rem;
-    min-width: 16rem;
-    height: 16rem;
-    width: 16rem;
+    min-height: 30rem;
+    min-width: 30rem;
+    height: 30rem;
+    width: 30rem;
+    margin-right: -5%;
   }
 }
 
@@ -126,6 +152,10 @@ const isMobileScreen = computed(() => windowWidth.value < 836);
   .introducing {
     flex-direction: column;
     margin-top: 4rem;
+  }
+
+  .title {
+    max-width: 20rem;
   }
 
   .title h1 {
@@ -143,10 +173,11 @@ const isMobileScreen = computed(() => windowWidth.value < 836);
   }
 
   .video {
-    min-height: 28rem;
-    min-width: 28rem;
-    height: 28rem;
-    width: 28rem;
+    min-height: 35rem;
+    min-width: 35rem;
+    height: 35rem;
+    width: 35rem;
+    margin-top: -5%;
   }
   
 }

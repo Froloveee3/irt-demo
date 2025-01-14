@@ -160,14 +160,23 @@
   --color-table-bg: #86a2ff33;
   --color-loading-bg: #cbd7ff;
 
-  --font-h1: 2.5rem;
-  --font-h2: 1rem;
-  --font-text1: 1.5rem;
-  --font-text2: 1rem;
-  --font-header: 0.75rem;
+  --font-h1: 4rem;
+  --font-h2: 1.5rem;
+  --font-text1: 2.25rem;
+  --font-text2: 1.5rem;
+  --font-header: 1rem;
   --font-header-family: "Inter";
   --font-header-weight: 300;
   --loading-logo-size: 15.375rem;
+
+  --font-h1-pc: 2.5rem;
+  --font-h2-pc: 1rem;
+  --font-text1-pc: 1.5rem;
+  --font-text2-pc: 1rem;
+  --font-header-pc: 0.75rem;
+  --font-header-family-pc: "Inter";
+  --font-header-weight-pc: 300;
+  --loading-logo-size-pc: 15.375rem;
 
   --font-h1-tablet: 2rem;
   --font-h2-tablet: 0.875rem;
@@ -179,7 +188,7 @@
   --loading-logo-size-tablet: 15.375rem;
 
   --font-h1-mobile: 1.25rem;
-  --font-h2-mobile: 0.875rem;
+  --font-h2-mobile: 0.625rem;
   --font-text1-mobile: 0.875rem;
   --font-text2-mobile: 0.75rem;
   --font-header-mobile: 0.75rem;
@@ -226,6 +235,31 @@ h2 {
   font-weight: var(--font-header-weight);
   padding: 0;
   margin: 0;
+}
+
+a {
+  color: #86A2FF;
+  text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #86A2FF;
+}
+
+@media (max-width: 1500px) {
+  :root {
+    --font-h1: var(--font-h1-pc);
+    --font-h2: var(--font-h2-pc);
+    --font-text1: var(--font-text1-pc);
+    --font-text2: var(--font-text2-pc);
+    --font-header: var(--font-header-pc);
+    --font-header-family: var(--font-header-family-pc);
+    --font-header-weight: var(--font-header-weight-pc);
+    --loading-logo-size: var(--loading-logo-size-pc);
+  }
 }
 
 @media (max-width: 1100px) {

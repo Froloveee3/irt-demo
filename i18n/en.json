@@ -6,7 +6,7 @@
   "Контакты": "Contacts",
 
   "ИРТ": "SRT",
-  " — роботизированные технологии для автоматизации вашего производства": " — robotic Technologies for Automating Your Production",
+  " — роботизированные технологии для автоматизации вашего производства": " — robotic technologies for automating your production",
   "Раздвигаем границы возможного!": "Expanding the Boundaries of Possibility!",
 
   "Наши преимущества": "Our Advantages",
@@ -54,7 +54,8 @@
   "Область применения:": "Applications:",
   "Основные технические характеристики": "Key Technical Specifications",
 
-  "Наша компания работает в единой связи с ООО \"Поволжское Производственное объединение №3\"": "Our company is part of \"Volga Production Association №3, LLC\"",
+  "companyText": "Our company is part of {companyLink}",
+  "companyName": "\"Volga Production Association №3\", LLC",
   "— это стабильно работающее предприятие с парком современного высокотехнологичного оборудования, что позволяет нам выпускать продукцию высокого качества, соответствующую самым строгим требованиям заказчиков.": "It is a stable enterprise equipped with a fleet of modern high-tech machinery, enabling us to produce high-quality products that meet the most stringent customer requirements.",
   "Мы гордимся своей профессиональной командой, состоящей из опытных рабочих, инженеров и программистов. Наши специалисты оперативно решают сложные производственные задачи и предоставляют услуги по созданию оснастки и компонентов для проектов автоматизации и роботизации технологических процессов.": "We take pride in our professional team, which includes experienced workers, engineers, and programmers. Our specialists efficiently solve complex production challenges and provide services for the creation of tooling and components for automation and robotics projects.",
   "Преимущества автоматизации технологических процессов": "Advantages of Automating Technological Processes",
@@ -72,5 +73,8 @@
   
   "Присоединяйтесь к нам!": "Join Us!",
   "Мы предлагаем сотрудничество специалистам, которые хотят расти и развиваться в области цифровых технологий. Если у вас есть знания и амбиции, независимо от вашего местоположения, мы будем рады видеть вас в нашей команде. Мы предлагаем возможности для обучения, развития и достойного заработка.": "We offer opportunities for specialists eager to grow and develop in digital technologies. Regardless of your location, if you have the knowledge and ambition, we’d be delighted to have you on our team. We provide opportunities for training, development, and competitive compensation.",
-  "Мы готовы к сотрудничеству с региональными компаниями для реализации проектов и решения актуальных задач на местах.": "We are open to collaborating with regional companies to implement projects and solve pressing local challenges."
+  "Мы готовы к сотрудничеству с региональными компаниями для реализации проектов и решения актуальных задач на местах.": "We are open to collaborating with regional companies to implement projects and solve pressing local challenges.",
+  
+  "Подробнее": "More",
+  "Скрыть": "Less"
 }

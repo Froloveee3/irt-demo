@@ -2,7 +2,7 @@
   <div class="advantages" id="advantages">
     <div class="title">
       <h1>{{$t("Наши преимущества")}}</h1>
-      <p class="text-1">>{{$t("ИРТ выведет ваше производство на новый уровень рентабельности и качества.")}}</p>
+      <p class="text-1">{{$t("ИРТ выведет ваше производство на новый уровень рентабельности и качества.")}}</p>
     </div>
     <div class="info">
       <Box 
@@ -10,7 +10,7 @@
         :key="advantage.id"
         :title="advantage.title"
         :text="advantage.text"
-        :image="advantage.image" 
+        :image="advantage.image"
       />
     </div>
   </div>
@@ -92,6 +92,12 @@ const advantages = [
   margin-top: 4.375rem;
 }
 
+@media (min-width: 1500px) {
+  .title {
+    max-width: 73rem;
+  }
+}
+
 @media (max-width: 1100px) {
   .info {
     display: grid;
@@ -123,6 +129,11 @@ const advantages = [
 }
 
 @media (max-width: 836px) {
+  .advantages {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .info {
     display: grid;
     grid-template-areas: 

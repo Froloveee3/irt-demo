@@ -24,6 +24,7 @@ const { locale } = useI18n();
 
 // Определяем логотип для футера в зависимости от локали
 const footerLogoSrc = computed(() => {
+  // return locale.value === "en" ? "/srt-web-page/images/footer-logo-en.png" : "/srt-web-page/images/footer-logo.png";
   return locale.value === "en" ? "/images/footer-logo-en.png" : "/images/footer-logo.png";
 });
 
@@ -96,6 +97,17 @@ h2 {
   color: inherit;
   cursor: pointer;
   height: 1rem;
+}
+
+@media (min-width: 1500px) {
+  .logo {
+    height: 10.25rem;
+    width: 7.5rem;
+  }
+
+  .navigation {
+    margin-top: 2rem;
+  }
 }
 
 @media (max-width: 836px) {

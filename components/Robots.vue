@@ -13,12 +13,15 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n';
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
+
+
 
 const robots = [
   {
     imageLeft: true,
     name: t("Роботы SCARA"),
+    // imagePath: "/srt-web-page/images/robot-scara.png",
     imagePath: "/images/robot-scara.png",
     text1: t("Компактная конструкция, высокая скорость, высокая точность позиционирования, малый размер и гибкость, защита от воды и пыли, легкий корпус, Поддержка модуля Wi-Fi, загрузка и выгрузка данных, мониторинг в реальном времени."),
     text2: t("Компьютерная, производство электроники, сортировка, фармацевтическое производство, пищевая промышленность."),
@@ -34,10 +37,13 @@ const robots = [
       ["SRT20-820", "820", "20", "4"],
       ["SRT20-1000", "1000", "20", "4"],
     ],
+    // imageTablePath: locale.value === "en" ? "/srt-web-page/images/scara-table-en.png" : "/srt-web-page/images/scara-table.png",
+    imageTablePath: locale.value === "en" ? "/images/scara-table-en.png" : "/images/scara-table.png",
   },
   {
     imageLeft: false,
     name: t("Настольные роботы серии SRTt"),
+    // imagePath: "/srt-web-page/images/robot-srtt.png",
     imagePath: "/images/robot-srtt.png",
     text1: t("Высокий уровень защиты, высокая скорость, точность, стабильность."),
     text2: t("Компьютерная, коммуникационная, бытовая электроника, металлообработка, пищевая промышленность, фармацевтическое производство. Идеально подходит для интенсивной работы в зоне замкнутого пространства."),
@@ -49,10 +55,13 @@ const robots = [
       ["SRTt10-1210", "1211", "10", "6"],
       ["SRTt15-950", "947", "15", "6"],
     ],
+    // imageTablePath: locale.value === "en" ? "/srt-web-page/images/srtt-table-en.png" : "/srt-web-page/images/srtt-table.png",
+    imageTablePath: locale.value === "en" ? "/images/srtt-table-en.png" : "/images/srtt-table.png",
   },
   {
     imageLeft: true,
     name: t("Роботы легко - средне нагруженные SRTе"),
+    // imagePath: "/srt-web-page/images/robot-srte.png",
     imagePath: "/images/robot-srte.png",
     text1: t("Высокая скорость, повторяемость, точность позиционирования и жесткость, высокий уровень защиты, легкий корпус, низкие затраты на эксплуатацию и обслуживание."),
     text2: t("Компьютерная, коммуникационная, производство бытовой электроники, металлообработка, сварочное производство, окрасочное производство. В основном применяется для погрузки и разгрузки, шлифовки и полировки, сварки, перемещения и укладки в тяжелых условиях."),
@@ -68,10 +77,13 @@ const robots = [
       ["SRTe50-2230", "2238", "50", "6"],
       ["SRTe75-2100", "2112", "75", "6"],
     ],
+    // imageTablePath: locale.value === "en" ? "/srt-web-page/images/srte-table-en.png" : "/srt-web-page/images/srte-table.png",
+    imageTablePath: locale.value === "en" ? "/images/srte-table-en.png" : "/images/srte-table.png",
   },
   {
     imageLeft: false,
     name: t("Роботы тяжело нагруженные SRTh"),
+    // imagePath: "/srt-web-page/images/robot-srth.png",
     imagePath: "/images/robot-srth.png",
     text1: t("Жёсткая конструкция, высокая стабильность, незначительные колебания крутящего момента."),
     text2: t("Производственные линии, тяжелая промышленность, машиностроение, механическая обработка, перемещение тяжелых грузов."),
@@ -86,6 +98,8 @@ const robots = [
       ["SRTh220-3100", "3104", "220", "6"],
       ["SRTh280-2700", "2707", "280", "6"],
     ],
+    // imageTablePath: locale.value === "en" ? "/srt-web-page/images/srth-table-en.png" : "/srt-web-page/images/srth-table.png",
+    imageTablePath: locale.value === "en" ? "/images/srth-table-en.png" : "/images/srth-table.png",
   },
 ];
 </script>
@@ -109,10 +123,27 @@ const robots = [
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 56rem;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   gap: 1rem;
+}
+
+.title h1 {
+    max-width: 56rem;
+  }
+
+.title p {
+  max-width: 56rem;
+}
+
+@media (min-width: 1500px) {
+  .title h1 {
+    max-width: 73.75rem;
+  }
+
+  .title p {
+    max-width: 92.5rem;
+  }
 }
 </style>

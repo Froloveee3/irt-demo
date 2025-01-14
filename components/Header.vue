@@ -75,6 +75,7 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useRouter } from 'vue-router';
 
 const windowWidth = ref(window.innerWidth);
 
@@ -96,6 +97,7 @@ const { locale } = useI18n();
 const isMenuOpen = ref(false);
 
 const logoSrc = computed(() => {
+  // return locale.value === 'en' ? '/srt-web-page/images/main-logo-en.png' : '/srt-web-page/images/main-logo.png';
   return locale.value === 'en' ? '/images/main-logo-en.png' : '/images/main-logo.png';
 });
 
@@ -103,9 +105,16 @@ function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value;
 }
 
+
+const router = useRouter();
 function toggleLanguage() {
-  locale.value = locale.value === 'en' ? 'ru' : 'en';
+  const newLocale = locale.value === 'en' ? 'ru' : 'en';
+  // const currentPath = router.currentRoute.value.fullPath.replace('/srt-web-page', '');
+  const newPath = newLocale === 'en' ? `/en` : `/`;
+
+  router.push(newPath);
 }
+
 
 function scrollTo(id: string) {
   const element = document.getElementById(id);

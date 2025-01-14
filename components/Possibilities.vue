@@ -2,7 +2,7 @@
   <div class="possibilities" id="possibilities">
     <h1>{{$t("Наши возможности")}}</h1>
     <div class="grid">
-      <Box v-for="(item, index) in items" :key="index" :title="item.title" :text="item.description" :title-height="item.titleHeight" :class="`grid-item item-${index + 1}`"/>
+      <Box v-for="(item, index) in items" :key="index" :title="item.title" :text="item.description" :title-height="item.titleHeight" :scrollToId="item.scrollToId" :class="`grid-item item-${index + 1}`"/>
     </div>
   </div>
 </template>
@@ -14,15 +14,15 @@ import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
 const items = [
-  { title: t("Промышленные роботы манипуляторы"), description: t("Программирование и пуско-наладка"), titleHeight: "3.75rem" },
-  { title: t("Интеллектуальные разработки"), description: t("Мы сможем не только поставить необходимых роботов, но и спроектировать все узлы и компоненты для интеграции в ваш рабочий процесс"), titleHeight: "3.75rem" },
-  { title: t("Собственное производство"), description: t("Изготовление необходимой оснастки и инструментов на собственном производстве"), titleHeight: "3.75rem" },
+  { title: t("Промышленные роботы манипуляторы"), description: t("Программирование и пуско-наладка"), titleHeight: "3.75rem", scrollToId: "robots" },
+  { title: t("Интеллектуальные разработки"), description: t("Мы сможем не только поставить необходимых роботов, но и спроектировать все узлы и компоненты для интеграции в ваш рабочий процесс"), titleHeight: "3.75rem"},
+  { title: t("Собственное производство"), description: t("Изготовление необходимой оснастки и инструментов на собственном производстве"), titleHeight: "3.75rem", scrollToId: "production" },
   { title: t("Написание управляющих программ для оборудования"), description: "", titleHeight: "3.75rem" },
   { title: t("Написание постпроцессоров"), description: "", titleHeight: "3.75rem" },
   { title: t("Программирование контроллеров"), description: "", titleHeight: "3.75rem" },
-  { title: t("Автоматизация технологических процессов"), description: "", titleHeight: "3.75rem" },
+  { title: t("Автоматизация технологических процессов"), description: "", titleHeight: "3.75rem", scrollToId: "automization" },
   { title: t("3D-моделирование и разработка чертежей"), description: "", titleHeight: "3.75rem" },
-  { title: t("Модернизация оборудования"), description: "", titleHeight: "3.75rem" },
+  { title: t("Модернизация оборудования"), description: "", titleHeight: "3.75rem", scrollToId: "modernization" },
 ];
 </script>
 
@@ -82,12 +82,17 @@ h1 {
 }
 
 .grid-item {
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 8rem;
+}
+
+@media (max-width: 836px) {
+  .grid-item {
+  }
 }
 
 .grid-item h2 {
